@@ -86,11 +86,11 @@ function playGame() {
     computerSelection = getComputerChoice();
     humanSelection = getHumanChoice();
     if (humanScore>computerScore) {
-        alert("Game Won!");
+        alert("Game Won! " + humanScore + " to " + computerScore);
     } else if (humanScore<computerScore) {
-        alert("Game Lost!");
+        alert("Game Lost! " + humanScore + " to " + computerScore);
     } else {
-        alert("Game Tied");
+        alert("Game Tied " + humanScore + " to " + computerScore);
     };
 }
 
