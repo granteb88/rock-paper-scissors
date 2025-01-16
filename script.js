@@ -20,15 +20,23 @@ console.log(cChoice)
 function getHumanChoice() {
     let hChoice = prompt("Rock, Paper or Scissors?");
     if (hChoice.toLowerCase() === "rock") {
-        alert("You Chose Rock")
+        alert("You Chose Rock");
+        hChoice = "rock"
     } else if (hChoice.toLowerCase() === "paper") {
-        alert("You Chose Paper")
+        alert("You Chose Paper");
+        hChoice = "paper"
     } else if (hChoice.toLowerCase() === "scissors") {
-        alert("You Chose Scissors")
+        alert("You Chose Scissors");
+        hChoice = "scissors"
     } else {
         alert("Invalid Choice")
     };
-
 }
 
 getHumanChoice()
+console.log(hChoice)
+
+let humanScore = 0
+let computerScore = 0
+
+
