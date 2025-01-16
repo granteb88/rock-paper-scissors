@@ -5,17 +5,15 @@ function getComputerNumber(max) {
 }
 
 function getComputerChoice() {
-        let number = getComputerNumber(3);
-        if (number === 2) {
-        cChoice = "rock"
-        } else if (number === 1) {
-        cChoice = "paper"
-        } else {
-        cChoice = "scissors"};
+    let number = getComputerNumber(3);
+    if (number === 2) {
+    cChoice = "rock"
+    } else if (number === 1) {
+    cChoice = "paper"
+    } else {
+    cChoice = "scissors"};
+    return cChoice
 }
-
-getComputerChoice()
-console.log(cChoice)
 
 function getHumanChoice() {
     let hChoice = prompt("Rock, Paper or Scissors?");
@@ -31,12 +29,44 @@ function getHumanChoice() {
     } else {
         alert("Invalid Choice")
     };
+    return hChoice
 }
 
-getHumanChoice()
-console.log(hChoice)
+let humanScore = 0;
+let computerScore = 0;
 
-let humanScore = 0
-let computerScore = 0
+    function playRound (humanChoice, computerChoice) {
+        if (humanChoice === "rock" && computerChoice === "paper") {
+            alert("You Lost");
+            computerScore += 1;
+        } else if (humanChoice === "rock" && computerChoice === "rock") {
+            alert("You Tied");
+        } else if (humanChoice === "rock" && computerChoice === "scissors") {
+            alert("You Won");
+            humanScore += 1;
+        } else if (humanChoice === "paper" && computerChoice === "paper") {
+            alert("You Tied");
+        } else if (humanChoice === "paper" && computerChoice === "rock") {
+            alert("You Won");
+            humanScore += 1;
+        } else if (humanChoice === "paper" && computerChoice === "scissors") {
+            alert("You Lost");
+            computerScore += 1;
+        } else if (humanChoice === "scissors" && computerChoice === "paper") {
+            alert("You Won");
+            humanScore += 1;
+        } else if (humanChoice === "scissors" && computerChoice === "rock") {
+            alert("You Lost");
+            computerScore += 1;
+        } else {
+            alert("You Tied");
+        };
 
+    }
 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection)
+console.log(humanScore)
+console.log(computerScore)
