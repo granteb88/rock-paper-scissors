@@ -32,41 +32,66 @@ function getHumanChoice() {
     return hChoice
 }
 
+
 let humanScore = 0;
 let computerScore = 0;
 
     function playRound (humanChoice, computerChoice) {
         if (humanChoice === "rock" && computerChoice === "paper") {
-            alert("You Lost");
+            alert("Round Lost");
             computerScore += 1;
         } else if (humanChoice === "rock" && computerChoice === "rock") {
-            alert("You Tied");
+            alert("Round Tied");
         } else if (humanChoice === "rock" && computerChoice === "scissors") {
-            alert("You Won");
+            alert("Round Won");
             humanScore += 1;
         } else if (humanChoice === "paper" && computerChoice === "paper") {
-            alert("You Tied");
+            alert("Round Tied");
         } else if (humanChoice === "paper" && computerChoice === "rock") {
-            alert("You Won");
+            alert("Round Won");
             humanScore += 1;
         } else if (humanChoice === "paper" && computerChoice === "scissors") {
-            alert("You Lost");
+            alert("Round Lost");
             computerScore += 1;
         } else if (humanChoice === "scissors" && computerChoice === "paper") {
-            alert("You Won");
+            alert("Round Won");
             humanScore += 1;
         } else if (humanChoice === "scissors" && computerChoice === "rock") {
-            alert("You Lost");
+            alert("Round Lost");
             computerScore += 1;
         } else {
-            alert("You Tied");
+            alert("Round Tied");
         };
 
     }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection)
-console.log(humanScore)
-console.log(computerScore)
+function playGame() {
+    playRound(humanSelection, computerSelection);
+    getComputerChoice();
+    computerSelection = getComputerChoice();
+    humanSelection = getHumanChoice();
+    playRound(humanSelection, computerSelection);
+    getComputerChoice();
+    computerSelection = getComputerChoice();
+    humanSelection = getHumanChoice();
+    playRound(humanSelection, computerSelection);
+    getComputerChoice();
+    computerSelection = getComputerChoice();
+    humanSelection = getHumanChoice();
+    playRound(humanSelection, computerSelection);
+    getComputerChoice();
+    computerSelection = getComputerChoice();
+    humanSelection = getHumanChoice();
+    if (humanScore>computerScore) {
+        alert("Game Won!");
+    } else if (humanScore<computerScore) {
+        alert("Game Lost!");
+    } else {
+        alert("Game Tied");
+    };
+}
+
+playGame()
